@@ -42,15 +42,13 @@ const DropDown: React.FC<
             w={"100%"}
             h={"100%"}
             boxShadow={"md"}
-            bg={"white"}
             mt={"8px"}
             borderRadius={"lg"}
           >
             {currentSuggestions?.map((suggest, i) => (
               <Text
                 cursor={"pointer"}
-                bg={"white"}
-                _hover={{ bg: "gray.100" }}
+                _hover={{ bg: "gray.500" }}
                 key={i}
                 p={"8px 8px"}
                 onClick={() => {

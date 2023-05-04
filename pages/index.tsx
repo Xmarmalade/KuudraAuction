@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import AttributeDropDown from '@/components/input/AttributeDropDown';
 import ItemDropDown from '@/components/input/ItemDropDown';
 import SearchButton from '@/components/input/SearchButton';
+import { validateAttribute } from '@/constants/SBAttributes';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,7 @@ export default function Home() {
 
   const handleSearchButtonClick = (e: MouseEvent) => {
     e.preventDefault();
-    const url = `/kuudra/${itemName}?${attr1}&${attr2}`;
+    const url = `/kuudra/${itemName}?attr1=${validateAttribute(attr1)}&attr2=${validateAttribute(attr2)}`;
     router.push(url);
   }
 
