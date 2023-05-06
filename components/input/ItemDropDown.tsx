@@ -13,7 +13,7 @@ const ItemDropDown: React.FC<
   }> = ({ style, itemName, setItemName }) => {
     const placeholderText = "Item name here";
     return (
-      <DropDown style={style} text={itemName} setText={setItemName} placeholder={placeholderText} suggestions={SBKuudraItems} />
+      <DropDown style={style} text={itemName} setText={setItemName} isItem={true} placeholder={placeholderText} suggestions={SBKuudraItems} />
     );
 }
 

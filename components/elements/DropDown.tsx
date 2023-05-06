@@ -1,5 +1,8 @@
 import React from "react";
-import { Box, Input, Text } from "@chakra-ui/react";
+import { Flex, FormControl, Avatar, Text } from "@chakra-ui/react";
+import { AutoComplete, AutoCompleteInput, AutoCompleteList, AutoCompleteItem } from "@choc-ui/chakra-autocomplete";
+import { SBKuudraItemIDs } from "@/constants/SBKuudraItems";
+import { SBKuudraItemType } from "@/types/KuudraItemTypes";
 
 const DropDown: React.FC<
   {
@@ -9,60 +12,33 @@ const DropDown: React.FC<
     }
     text: string
     setText: React.Dispatch<React.SetStateAction<string>>
+    isItem: boolean
     placeholder: string
     suggestions: string[]
-  }> = ({ style, text, setText, placeholder, suggestions }) => {
-    const [isFocus, setIsFocus] = React.useState(false);
-    const [currentSuggestions, setCurrentSuggestions] = React.useState<string[]>([]);
-
-    const handleTextChange = (text: string) => {
-      let mathes: string[] = [];
-      if (text.length > 0) {
-        mathes = suggestions?.filter((attr) => {
-          const regex = new RegExp(`${text}`, "gi");
-          return attr.match(regex);
-        });
-      }
-      setCurrentSuggestions(mathes);
-      setText(text);
-    };
-
+  }> = ({ style, text, setText, isItem, placeholder, suggestions }) => {
     return (
-      <Box w={style.width} >
-        <Input
-          onFocus={() => setIsFocus(true)}
-          type="text"
-          value={text}
-          onChange={(e) => handleTextChange(e.target.value)}
-          placeholder={placeholder}
-          isDisabled={style.isDisabled}
-        />
-        {isFocus && (
-          <Box
-            w={"100%"}
-            h={"100%"}
-            boxShadow={"md"}
-            mt={"8px"}
-            borderRadius={"lg"}
-          >
-            {currentSuggestions?.map((suggest, i) => (
-              <Text
-                cursor={"pointer"}
-                _hover={{ bg: "gray.500" }}
-                key={i}
-                p={"8px 8px"}
-                onClick={() => {
-                  setText(suggest);
-                  setIsFocus(false);
-                }}
-              >
-                {suggest}
-              </Text>
-            ))}
-          </Box>
-        )}
-      </Box>
-    )
+      <Flex width={style.width} >
+        <FormControl>
+          <AutoComplete onSelectOption={(params) => setText(params.item.value)} placeholder={placeholder} value={text} >
+            <AutoCompleteInput isDisabled={style.isDisabled} onChange={e => setText(e.target.value)} />
+            <AutoCompleteList>
+              {isItem ?
+                suggestions.map((attr, i) => (
+                  <AutoCompleteItem key={i} value={attr} textTransform={"capitalize"}>
+                    <Avatar size={"sm"} name={attr} src={SBKuudraItemIDs[attr as SBKuudraItemType].url} />
+                    <Text ml={4} align={"center"}>{attr}</Text>
+                  </AutoCompleteItem>
+                ))
+                : suggestions.map((attr, i) => (
+                  <AutoCompleteItem key={i} value={attr} textTransform={"capitalize"}>
+                    {attr}
+                  </AutoCompleteItem>
+              ))}
+            </AutoCompleteList>
+          </AutoComplete>
+        </FormControl>
+      </Flex>
+    );
 }
 
 export default DropDown;

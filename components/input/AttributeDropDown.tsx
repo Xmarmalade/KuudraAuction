@@ -13,7 +13,7 @@ const AttributeDropDown: React.FC<
   }> = ({ style, attribute, setAttribute }) => {
     const placeholderText = "Attribute name here";
     return (
-      <DropDown style={style} text={attribute} setText={setAttribute} placeholder={placeholderText} suggestions={SBAttributes} />
+      <DropDown style={style} text={attribute} setText={setAttribute} isItem={false} placeholder={placeholderText} suggestions={SBAttributes} />
     );
 }
 

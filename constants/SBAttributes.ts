@@ -84,3 +84,14 @@ export const validateAttribute = (attr: string | string[] | undefined) => {
     else if (SBAttributes.includes(attr)) return SBAttributeIDs[attr as SBAttributeTypes];
     else return "";
 };
+
+export const getAttributeNameFromID = (attrID: string) => {
+    const keys = Object.keys(SBAttributeIDs);
+    let name = "";
+    keys.forEach((key) => {
+        if (SBAttributeIDs[key as SBAttributeTypes] === attrID) {
+            name = key;
+        }
+    });
+    return name;
+}

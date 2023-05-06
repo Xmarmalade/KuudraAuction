@@ -1,14 +1,15 @@
 import React from "react";
-import { Box, Card, CardBody, CardHeader, Heading, Stack, StackDivider, Text, CardProps } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardHeader, Heading, Stack, StackDivider, Text } from "@chakra-ui/react";
 import ItemName from "../elements/ItemName";
+import { getAttributeNameFromID } from "@/constants/SBAttributes";
 import { ItemDataType } from "@/types/ItemDataTypes";
 
 const ItemCard: React.FC<{
   itemData: ItemDataType
 }> = ({itemData}) => {
   return (
-    <Card>
-      <Box border={"1px"} borderRadius={"lg"}>
+    <Card margin={"15px"} width={"100%"}>
+      <Box padding={"5px"} boxShadow={"lg"} borderRadius={"lg"}>
         <CardHeader>
           <ItemName name={itemData.item_name} rarity={itemData.rarity} />
         </CardHeader>
@@ -22,7 +23,7 @@ const ItemCard: React.FC<{
                 Attributes
               </Heading>
               {itemData.attributes.map((attr, i) => (
-                <Text fontSize={"sm"} key={i}>{`${attr.name} ${attr.value.toString()}`}</Text>
+                <Text fontSize={"sm"} key={i}>{`${getAttributeNameFromID(attr.name)} ${attr.value.toString()}`}</Text>
               ))}
             </Box>
           </Stack>
