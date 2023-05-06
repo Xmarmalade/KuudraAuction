@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, useState } from "react";
 import { useRouter } from "next/router";
-import { Box, Text, HStack, VStack } from "@chakra-ui/react";
+import { Box, BoxProps, Text, HStack, VStack } from "@chakra-ui/react";
 import DropDownBox from "./input/DropDownBox";
 import ItemDropDown from "./input/ItemDropDown";
 import AttributeDropDown from "./input/AttributeDropDown";
@@ -9,7 +9,9 @@ import { validateAttribute } from "@/constants/SBAttributes";
 import SearchButton from "./input/SearchButton";
 
 
-const KuudraItemInput: React.FC<{}> = () => {
+const KuudraItemInput: React.FC<{
+  style?: BoxProps
+}> = ({ style }) => {
   const [itemName, setItemName] = useState("");
   const [attr1, setAttr1] = useState("");
   const [attr2, setAttr2] = useState("");
@@ -23,7 +25,7 @@ const KuudraItemInput: React.FC<{}> = () => {
   }
 
   return (
-    <Box padding={"20px"} boxShadow={"lg"} rounded={"lg"} backgroundColor={"gray.700"}>
+    <Box {...style} padding={"20px"} boxShadow={"lg"} rounded={"lg"} backgroundColor={"gray.700"}>
       <Text fontSize={"4xl"} as={"u"}>Item Search with Attributes</Text>
       <VStack spacing={"16px"}>
         <HStack spacing={"24px"}>
