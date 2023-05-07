@@ -1,14 +1,15 @@
 import React from "react"
-import { Text } from "@chakra-ui/react"
+import { Text, TextProps } from "@chakra-ui/react"
 import { RarityType } from "@/types/RarityTypes"
 import RarityColor from "@/constants/RarityColor"
 
 const ItemName: React.FC<{
   name: string
   rarity: RarityType
-}> = ({ name, rarity }) => {
+  style?: TextProps
+}> = ({ name, rarity, style }) => {
   return (
-    <Text color={RarityColor[rarity]}>{name}</Text>
+    <Text {...style} color={RarityColor[rarity]}>{name}</Text>
   );
 };
 

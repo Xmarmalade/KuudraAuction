@@ -28,7 +28,8 @@ const LowestBin: React.FC<Props> = (props: Props) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const url = "https://hypixelattributeauction-production.up.railway.app/api/auction/kuudra/lowestbin";
+  const baseUrl = process.env["BASE_URL"];
+  const url = `${baseUrl}/api/auction/kuudra/lowestbin`;
   const res = await fetch(url);
   const rawLBData: Props = await res.json();
   return {

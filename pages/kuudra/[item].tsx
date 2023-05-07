@@ -1,7 +1,6 @@
 import Error from "next/error";
 import { GetServerSideProps } from "next";
 import React from "react";
-import { Box } from "@chakra-ui/react";
 import { ItemDataType } from "@/types/ItemDataTypes";
 import ItemCardList from "@/components/item/ItemCardList";
 import ItemImageDisplay from "@/components/item/ItemImageDisplay";
@@ -35,7 +34,8 @@ const Items: React.FC<Props> = (props: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { item, attr1, attr2 } = context.query;
-  let url = `https://hypixelattributeauction-production.up.railway.app/api/auction/item_id/${item}`;
+  const baseUrl = process.env["BASE_URL"];
+  let url = `${baseUrl}/api/auction/item_id/${item}`;
   if (attr1 !== "") url += `?attribute1=${attr1}`;
   if (attr2 !== "") url += `&attribute2=${attr2}`;
   const res = await fetch(url);
