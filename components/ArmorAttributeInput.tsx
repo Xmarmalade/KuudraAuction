@@ -26,8 +26,8 @@ const ArmorAttributeInput: React.FC<{
       <VStack>
         <HStack spacing={100}>
           <DropDownBox title="Armor Piece" detail="Select armor piece.">
-            <Select onChange={e => setArmor(e.target.value)}>
-              <option selected hidden disabled value={""}>Select armor piece</option>
+            <Select onChange={e => setArmor(e.target.value)} defaultValue={"default"}>
+              <option hidden disabled value={"default"}>Select armor piece</option>
               <option value={"helmet"}>Helmet</option>
               <option value={"chestplate"}>Chestplate</option>
               <option value={"leggings"}>Leggings</option>

@@ -27,7 +27,8 @@ export type SBKuudraItemType = "Fervor Helmet" |
     "Aurora Staff" |
     "Hollow Wand" |
     "Wheel of Fate" |
-    "Tentacle Dye";
+    "Tentacle Dye" |
+    "Attribute Shard";
 
 export type SBKuudraItemIDType = "FERVOR_HELMET" |
     "FERVOR_CHESTPLATE" |
@@ -58,4 +59,5 @@ export type SBKuudraItemIDType = "FERVOR_HELMET" |
     "RUNIC_STAFF" |
     "HOLLOW_WAND" |
     "WHEEL_OF_FATE" |
-    "TENTACLE_DYE";
+    "TENTACLE_DYE" |
+    "ATTRIBUTE_SHARD";

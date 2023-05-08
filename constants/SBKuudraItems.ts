@@ -30,7 +30,8 @@ export const SBKuudraItems = [
     "Aurora Staff",
     "Hollow Wand",
     "Wheel of Fate",
-    "Tentacle Dye"
+    "Tentacle Dye",
+    "Attribute Shard"
 ];
 
 export const SBKuudraItemIDs = {
@@ -153,6 +154,10 @@ export const SBKuudraItemIDs = {
     "Tentacle Dye": {
         id: "TENTACLE_DYE",
         url: "https://static.wikia.nocookie.net/hypixel-skyblock/images/e/eb/Light_Blue_Dye.png"
+    },
+    "Attribute Shard": {
+        id: "ATTRIBUTE_SHARD",
+        url: "https://static.wikia.nocookie.net/hypixel-skyblock/images/6/64/Prismarine_Shard.png"
     }
 }
 
