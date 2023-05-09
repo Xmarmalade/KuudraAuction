@@ -8,6 +8,7 @@ import Error from "next/error";
 
 type Props = {
   success: boolean;
+  last_update: number;
   data: ItemDataType;
 }
 
