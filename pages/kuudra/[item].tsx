@@ -7,11 +7,14 @@ import ItemImageDisplay from "@/components/item/ItemImageDisplay";
 import { SBAttributeItemIDType, SBAttributeItemType } from "@/types/AttributeItemTypes";
 import { getNameFromItemID, getUrlFromItemID } from "@/constants/SBAttributeItems";
 import StandardLayout from "@/components/Layout/StandardLayout";
+import { Box, VStack } from "@chakra-ui/react";
+import TimeDisplay from "@/components/elements/TimeDisplay";
 
 type Props = {
   itemID: string;
   apiData: {
     success: boolean;
+    last_update: number;
     data: ItemDataType[];
   }
 };
@@ -27,7 +30,12 @@ const Items: React.FC<Props> = (props: Props) => {
         url={getUrlFromItemID(props.itemID as SBAttributeItemIDType)}
         style={{ width: "40%", pos: "fixed", top: "10%" }}
       />
-      <ItemCardList data={props.apiData.data} style={{ width: "60%", padding: "20px", paddingRight: "40px", marginLeft: "40%" }} />
+      <VStack width={"60%"} padding={"20px"} paddingRight={"40px"} marginLeft={"40%"}>
+        <Box width={"100%"} display={"flex"} justifyContent={"right"}>
+          <TimeDisplay epoch_time={props.apiData.last_update} style={{ fontSize: "2xl" }} />
+        </Box>
+        <ItemCardList data={props.apiData.data} style={{width: "100%"}} />
+      </VStack>
     </StandardLayout>
   );
 };

@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Router from 'next/router';
+import { Analytics } from '@vercel/analytics/react';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import Loading from '@/components/Loading';
@@ -36,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Loading />
         : <Component {...pageProps} />
       }
+      <Analytics />
     </ChakraProvider>
   );
 }
