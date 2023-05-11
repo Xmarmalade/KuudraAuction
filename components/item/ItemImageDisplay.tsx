@@ -1,11 +1,11 @@
 import { Image, VStack, Text, Box, BoxProps } from "@chakra-ui/react";
-import { SBKuudraItemType } from "@/types/KuudraItemTypes";
+import { SBAttributeItemType } from "@/types/AttributeItemTypes";
 import { RarityType } from "@/types/RarityTypes";
 import RarityColor from "@/constants/RarityColor";
 
 
 const ItemImageDisplay: React.FC<{
-  itemName: SBKuudraItemType
+  itemName: SBAttributeItemType
   rarity: RarityType
   url: string
   style?: BoxProps

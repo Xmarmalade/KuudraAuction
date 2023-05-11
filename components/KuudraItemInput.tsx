@@ -4,7 +4,7 @@ import { Box, BoxProps, Text, HStack, VStack } from "@chakra-ui/react";
 import DropDownBox from "./input/DropDownBox";
 import ItemDropDown from "./input/ItemDropDown";
 import AttributeDropDown from "./input/AttributeDropDown";
-import { validateItem } from "@/constants/SBKuudraItems";
+import { validateItem } from "@/constants/SBAttributeItems";
 import { validateAttribute } from "@/constants/SBAttributes";
 import SearchButton from "./input/SearchButton";
 

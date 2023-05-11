@@ -1,6 +1,6 @@
-import { SBKuudraItemType } from "@/types/KuudraItemTypes";
+import { SBAttributeItemType } from "@/types/AttributeItemTypes";
 
-export const SBKuudraItems = [
+export const SBAttributeItems = [
     "Fervor Helmet",
     "Fervor Chestplate",
     "Fervor Leggings",
@@ -31,10 +31,12 @@ export const SBKuudraItems = [
     "Hollow Wand",
     "Wheel of Fate",
     "Tentacle Dye",
-    "Attribute Shard"
+    "Attribute Shard",
+    "Implosion Belt",
+    "Gauntlet of Contagion"
 ];
 
-export const SBKuudraItemIDs = {
+export const SBAttributeItemIDs = {
     "Fervor Helmet": {
         id: "FERVOR_HELMET",
         url: "https://static.wikia.nocookie.net/hypixel-skyblock/images/c/c9/Fervor_Helmet.png"
@@ -158,36 +160,44 @@ export const SBKuudraItemIDs = {
     "Attribute Shard": {
         id: "ATTRIBUTE_SHARD",
         url: "https://static.wikia.nocookie.net/hypixel-skyblock/images/6/64/Prismarine_Shard.png"
+    },
+    "Implosion Belt": {
+        id: "IMPLOSION_BELT",
+        url: "https://static.wikia.nocookie.net/hypixel-skyblock/images/8/83/Implosion_Belt.png"
+    },
+    "Gauntlet of Contagion": {
+        id: "GAUNTLET_OF_CONTAGION",
+        url: "https://static.wikia.nocookie.net/hypixel-skyblock/images/1/1a/Gauntlet_of_Contagion.png"
     }
 }
 
 export const isValidItem = (itemName: string | string[] | undefined) => {
     if (typeof itemName !== 'string') return false;
-    if (!SBKuudraItems.includes(itemName)) return false;
+    if (!SBAttributeItems.includes(itemName)) return false;
 };
 
 export const validateItem = (itemName: string | string[] | undefined) => {
     if (typeof itemName === "undefined" || typeof itemName === "object") return "";
-    else if (Object.keys(SBKuudraItemIDs).includes(itemName)) return SBKuudraItemIDs[itemName as SBKuudraItemType].id;
+    else if (Object.keys(SBAttributeItemIDs).includes(itemName)) return SBAttributeItemIDs[itemName as SBAttributeItemType].id;
     else return "";
 }
 
 export const getUrlFromItemID = (itemID: string) => {
-    const keys = Object.keys(SBKuudraItemIDs);
+    const keys = Object.keys(SBAttributeItemIDs);
     let url = "";
     keys.forEach((key) => {
-        if (SBKuudraItemIDs[key as SBKuudraItemType].id === itemID) {
-            url = SBKuudraItemIDs[key as SBKuudraItemType].url;
+        if (SBAttributeItemIDs[key as SBAttributeItemType].id === itemID) {
+            url = SBAttributeItemIDs[key as SBAttributeItemType].url;
         }
     });
     return url;
 }
 
 export const getNameFromItemID = (itemID: string) => {
-    const keys = Object.keys(SBKuudraItemIDs);
+    const keys = Object.keys(SBAttributeItemIDs);
     let name = "";
     keys.forEach((key) => {
-        if (SBKuudraItemIDs[key as SBKuudraItemType].id === itemID) {
+        if (SBAttributeItemIDs[key as SBAttributeItemType].id === itemID) {
             name = key;
         }
     });

@@ -1,4 +1,4 @@
-export type SBKuudraItemType = "Fervor Helmet" |
+export type SBAttributeItemType = "Fervor Helmet" |
     "Fervor Chestplate" |
     "Fervor Leggings" |
     "Fervor Boots" |
@@ -28,9 +28,11 @@ export type SBKuudraItemType = "Fervor Helmet" |
     "Hollow Wand" |
     "Wheel of Fate" |
     "Tentacle Dye" |
-    "Attribute Shard";
+    "Attribute Shard" |
+    "Implosion Belt" |
+    "Gauntlet of Contagion";
 
-export type SBKuudraItemIDType = "FERVOR_HELMET" |
+export type SBAttributeItemIDType = "FERVOR_HELMET" |
     "FERVOR_CHESTPLATE" |
     "FERVOR_LEGGINGS" |
     "FERVOR_BOOTS" |
@@ -60,4 +62,6 @@ export type SBKuudraItemIDType = "FERVOR_HELMET" |
     "HOLLOW_WAND" |
     "WHEEL_OF_FATE" |
     "TENTACLE_DYE" |
-    "ATTRIBUTE_SHARD";
+    "ATTRIBUTE_SHARD" |
+    "IMPLOSION_BELT" |
+    "GAUNTLET_OF_CONTAGION";

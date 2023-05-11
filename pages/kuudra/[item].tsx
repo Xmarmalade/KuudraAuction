@@ -4,8 +4,8 @@ import React from "react";
 import { ItemDataType } from "@/types/ItemDataTypes";
 import ItemCardList from "@/components/item/ItemCardList";
 import ItemImageDisplay from "@/components/item/ItemImageDisplay";
-import { SBKuudraItemIDType, SBKuudraItemType } from "@/types/KuudraItemTypes";
-import { getNameFromItemID, getUrlFromItemID } from "@/constants/SBKuudraItems";
+import { SBAttributeItemIDType, SBAttributeItemType } from "@/types/AttributeItemTypes";
+import { getNameFromItemID, getUrlFromItemID } from "@/constants/SBAttributeItems";
 import StandardLayout from "@/components/Layout/StandardLayout";
 
 type Props = {
@@ -22,9 +22,9 @@ const Items: React.FC<Props> = (props: Props) => {
   }
   return (
     <StandardLayout>
-      <ItemImageDisplay itemName={getNameFromItemID(props.itemID as SBKuudraItemIDType) as SBKuudraItemType}
+      <ItemImageDisplay itemName={getNameFromItemID(props.itemID as SBAttributeItemIDType) as SBAttributeItemType}
         rarity={props.apiData.data[0].rarity}
-        url={getUrlFromItemID(props.itemID as SBKuudraItemIDType)}
+        url={getUrlFromItemID(props.itemID as SBAttributeItemIDType)}
         style={{ width: "40%", pos: "fixed", top: "10%" }}
       />
       <ItemCardList data={props.apiData.data} style={{ width: "60%", padding: "20px", paddingRight: "40px", marginLeft: "40%" }} />

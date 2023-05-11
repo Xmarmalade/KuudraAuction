@@ -1,8 +1,8 @@
 import React from "react";
 import { Flex, FormControl, Avatar, Text } from "@chakra-ui/react";
 import { AutoComplete, AutoCompleteInput, AutoCompleteList, AutoCompleteItem } from "@choc-ui/chakra-autocomplete";
-import { SBKuudraItemIDs } from "@/constants/SBKuudraItems";
-import { SBKuudraItemType } from "@/types/KuudraItemTypes";
+import { SBAttributeItemIDs } from "@/constants/SBAttributeItems";
+import { SBAttributeItemType } from "@/types/AttributeItemTypes";
 
 const DropDown: React.FC<
   {
@@ -25,7 +25,7 @@ const DropDown: React.FC<
               {isItem ?
                 suggestions.map((attr, i) => (
                   <AutoCompleteItem key={i} value={attr} textTransform={"capitalize"}>
-                    <Avatar size={"sm"} name={attr} src={SBKuudraItemIDs[attr as SBKuudraItemType].url} />
+                    <Avatar size={"sm"} name={attr} src={SBAttributeItemIDs[attr as SBAttributeItemType].url} />
                     <Text ml={4} align={"center"}>{attr}</Text>
                   </AutoCompleteItem>
                 ))
