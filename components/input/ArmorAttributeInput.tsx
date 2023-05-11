@@ -1,10 +1,10 @@
 import { Box, BoxProps, HStack, Select, Text, VStack } from "@chakra-ui/react";
 import React, { MouseEventHandler, useState } from "react";
-import AttributeDropDown from "./input/AttributeDropDown";
-import SearchButton from "./input/SearchButton";
+import AttributeDropDown from "./AttributeDropDown";
+import SearchButton from "./SearchButton";
 import { useRouter } from "next/router";
 import { validateAttribute } from "@/constants/SBAttributes";
-import DropDownBox from "./input/DropDownBox";
+import DropDownBox from "./DropDownBox";
 
 const ArmorAttributeInput: React.FC<{
   style?: BoxProps

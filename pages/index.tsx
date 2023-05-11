@@ -2,7 +2,7 @@ import { Box, VStack } from '@chakra-ui/react';
 
 import KuudraItemInput from '@/components/KuudraItemInput'
 import StandardLayout from '@/components/Layout/StandardLayout';
-import ArmorAttributeInput from '@/components/ArmorAttributeInput';
+import ArmorAttributeInput from '@/components/input/ArmorAttributeInput';
 
 export default function Home() {
   return (

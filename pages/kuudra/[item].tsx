@@ -41,11 +41,13 @@ const Items: React.FC<Props> = (props: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { item, attr1, attr2 } = context.query;
+  const { item, attr1, attr2, level1, level2 } = context.query;
   const baseUrl = process.env["BASE_URL"];
   let url = `${baseUrl}/api/auction/item_id/${item}`;
   if (attr1 !== "") url += `?attribute1=${attr1}`;
   if (attr2 !== "") url += `&attribute2=${attr2}`;
+  if (level1 !== "") url += `&attrlevel1=${level1}`;
+  if (level2 !== "") url += `&attrlevel2=${level2}`;
   const res = await fetch(url);
   const rawItemData: Props = await res.json();
   return {
