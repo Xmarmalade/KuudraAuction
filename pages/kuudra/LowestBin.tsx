@@ -16,6 +16,7 @@ type Props = {
 };
 
 const LowestBin: React.FC<Props> = (props: Props) => {
+  console.log(Date.now(), props.last_update);
   return (
     <StandardLayout>
       <Box width={"90%"} margin={"5%"}>

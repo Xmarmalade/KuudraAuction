@@ -9,4 +9,11 @@ export const convertMStoDate = (ms: number) => {
     const hours = total_hours % 60;
 
     return [days, hours, minutes, seconds];
-}
+};
+
+export const converMStoMinSec = (ms: number) => {
+    const total_seconds = Math.floor(ms / 1000);
+    const mins = Math.floor(total_seconds / 60);
+    const secs = total_seconds - mins * 60;
+    return [mins, secs];
+};
