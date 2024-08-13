@@ -6,7 +6,7 @@ const AttributeLevelDropDown: React.FC<
   {
     style: {
       width: string
-      isDisabled: boolean
+      isdisabled: boolean
     }
     attributeLevel: string
     setAttributeLevel: React.Dispatch<React.SetStateAction<string>>

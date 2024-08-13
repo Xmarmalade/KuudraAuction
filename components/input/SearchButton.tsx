@@ -3,13 +3,13 @@ import { Button, ButtonProps } from "@chakra-ui/react";
 
 const SearchButton: React.FC<
   {
-    isDisabled: ButtonProps["isDisabled"]
+    isdisabled: ButtonProps["isdisabled"]
     onClick: ButtonProps["onClick"]
-  }> = ({isDisabled, onClick}) => {
+  }> = ({isdisabled, onClick}) => {
     return (
       <Button
         colorScheme="blue"
-        isDisabled={isDisabled}
+        isdisabled={isdisabled}
         onClick={onClick}
         size={"md"}
       >

@@ -6,7 +6,7 @@ const ItemDropDown: React.FC<
   {
     style: {
       width: string
-      isDisabled: boolean
+      isdisabled: boolean
     }
     itemName: string
     setItemName: React.Dispatch<React.SetStateAction<string>>

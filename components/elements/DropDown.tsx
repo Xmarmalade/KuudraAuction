@@ -8,7 +8,7 @@ const DropDown: React.FC<
   {
     style: {
       width: string
-      isDisabled: boolean
+      isdisabled: boolean
     }
     text: string
     setText: React.Dispatch<React.SetStateAction<string>>
@@ -20,7 +20,7 @@ const DropDown: React.FC<
       <Flex width={style.width} >
         <FormControl>
           <AutoComplete onSelectOption={(params) => setText(params.item.value)} placeholder={placeholder} value={text} >
-            <AutoCompleteInput isDisabled={style.isDisabled} onChange={e => setText(e.target.value)} />
+            <AutoCompleteInput isdisabled={style.isdisabled} onChange={e => setText(e.target.value)} />
             <AutoCompleteList>
               {isItem ?
                 suggestions.map((attr, i) => (

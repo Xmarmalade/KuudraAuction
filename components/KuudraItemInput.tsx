@@ -33,23 +33,23 @@ const KuudraItemInput: React.FC<{
       <VStack spacing={"16px"}>
         <HStack spacing={"24px"}>
           <DropDownBox title='Item Name' detail='Input Kuudra item name.'>
-            <ItemDropDown style={{ width: "100%", isDisabled: false }} itemName={itemName} setItemName={setItemName} />
+            <ItemDropDown style={{ width: "100%", isdisabled: false }} itemName={itemName} setItemName={setItemName} />
           </DropDownBox>
           <DropDownBox title='Attribute1' detail='Input first attribute name.'>
             <HStack>
-              <AttributeDropDown style={{ width: "60%", isDisabled: itemName === "" ? true : false }} attribute={attr1} setAttribute={setAttr1} />
-              <AttributeLevelDropDown style={{ width: "20%", isDisabled: itemName === "" ? true : false }} attributeLevel={level1} setAttributeLevel={setLevel1} />
+              <AttributeDropDown style={{ width: "60%", isdisabled: itemName === "" ? true : false }} attribute={attr1} setAttribute={setAttr1} />
+              <AttributeLevelDropDown style={{ width: "20%", isdisabled: itemName === "" ? true : false }} attributeLevel={level1} setAttributeLevel={setLevel1} />
             </HStack>
           </DropDownBox>
           <DropDownBox title='Attribute2' detail='Input second attribute name(optional.)'>
             <HStack>
-              <AttributeDropDown style={{ width: "60%", isDisabled: attr1 === "" ? true : false }} attribute={attr2} setAttribute={setAttr2} />
-              <AttributeLevelDropDown style={{ width: "20%", isDisabled: attr1 === "" ? true : false }} attributeLevel={level2} setAttributeLevel={setLevel2} />
+              <AttributeDropDown style={{ width: "60%", isdisabled: attr1 === "" ? true : false }} attribute={attr2} setAttribute={setAttr2} />
+              <AttributeLevelDropDown style={{ width: "20%", isdisabled: attr1 === "" ? true : false }} attributeLevel={level2} setAttributeLevel={setLevel2} />
             </HStack>
           </DropDownBox>
         </HStack>
         <Box>
-          <SearchButton isDisabled={itemName === "" ? true : false} onClick={handleSearchButtonClick as unknown as MouseEventHandler<HTMLButtonElement>} />
+          <SearchButton isdisabled={itemName === "" ? true : false} onClick={handleSearchButtonClick as unknown as MouseEventHandler<HTMLButtonElement>} />
         </Box>
       </VStack>
     </Box>

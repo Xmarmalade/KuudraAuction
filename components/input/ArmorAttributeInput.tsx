@@ -35,11 +35,11 @@ const ArmorAttributeInput: React.FC<{
             </Select>
           </DropDownBox>
           <DropDownBox title="Attribute" detail="Input attribute name to search.">
-            <AttributeDropDown style={{ width: "100%", isDisabled: armor === "" ? true : false }} attribute={attr} setAttribute={setAttr} />
+            <AttributeDropDown style={{ width: "100%", isdisabled: armor === "" ? true : false }} attribute={attr} setAttribute={setAttr} />
           </DropDownBox>
         </HStack>
         <Box>
-          <SearchButton isDisabled={armor === "" ? true : false} onClick={handleSearchButtonClick as unknown as MouseEventHandler<HTMLButtonElement>} />
+          <SearchButton isdisabled={armor === "" ? true : false} onClick={handleSearchButtonClick as unknown as MouseEventHandler<HTMLButtonElement>} />
         </Box>
       </VStack>
     </Box>
